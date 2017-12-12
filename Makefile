@@ -12,7 +12,7 @@ init:
 	hub create
 	rm README.md
 	mv README.md.template README.md
-	sed -i -e 's/minimum_template/$(mkfile_dir_name)/g' Dockerfile README.md .bumpversion.cfg
+	sed -i -e 's/minimum_template/$(mkfile_dir_name)/g' Dockerfile README.md .bumpversion.cfg .travis.yml
 	git commit -a -m 'initial'
 	bumpversion --commit patch
 	sleep 5 # let GitHub catch up, sleep until URL returns 
@@ -31,6 +31,15 @@ build: $(mkfile_dir)/Dockerfile
 run:
 	docker run -it --rm ${PWD##*/}
 
+patch:
+	bumpversion  --commit patch
+
+minor:
+	bumpversion  --commit minor 
+
+major:
+	bumpversion  --commit major 
+
 ppatch:
 	bumpversion  --commit patch
 	git push --tags origin master
@@ -42,6 +51,3 @@ pminor:
 pmajor:
 	bumpversion  --commit major 
 	git push --tags origin master
-
-commit:
-	git commit -a

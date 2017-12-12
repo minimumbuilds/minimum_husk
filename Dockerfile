@@ -13,7 +13,7 @@ LABEL Name=minimum_template \
 
 COPY requirements.txt .
 
-RUN pip3 install -r requirements.txt \ 
+RUN pip3 -update && pip3 install -r requirements.txt \ 
         && cd /usr/local/bin \
 	&& ln -s idle3 idle \
 	&& ln -s pydoc3 pydoc \
