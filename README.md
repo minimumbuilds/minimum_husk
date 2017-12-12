@@ -24,10 +24,10 @@ Version: v0.0.1
 
 ## Docker Image
 
-[![](https://images.microbadger.com/badges/version/minimumbuilds/minimum_template:v0.0.0.svg)](https://microbadger.com/images/minimumbuilds/minimum_template:v0.0.0 "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/minimumbuilds/minimum_template:v0.0.0.svg)](https://microbadger.com/images/minimumbuilds/minimum_template:v0.0.0 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/commit/minimumbuilds/minimum_template:v0.0.0.svg)](https://microbadger.com/images/minimumbuilds/minimum_template:v0.0.0 "Get your own commit badge on microbadger.com") 
+[![](https://images.microbadger.com/badges/version/minimumbuilds/minimum_template:v0.0.1.svg)](https://microbadger.com/images/minimumbuilds/minimum_template:v0.0.1 "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/minimumbuilds/minimum_template:v0.0.1.svg)](https://microbadger.com/images/minimumbuilds/minimum_template:v0.0.1 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/commit/minimumbuilds/minimum_template:v0.0.1.svg)](https://microbadger.com/images/minimumbuilds/minimum_template:v0.0.1 "Get your own commit badge on microbadger.com") 
 
 ## Build
-[![Build Status](https://travis-ci.org/minimumbuilds/minimum_template.svg?branch=v0.0.0)](https://travis-ci.org/minimumbuilds/minimum_template)
+[![Build Status](https://travis-ci.org/minimumbuilds/minimum_template.svg?branch=v0.0.1)](https://travis-ci.org/minimumbuilds/minimum_template)
 
 ## Pull
 	docker pull minimumbuilds/minimum_template

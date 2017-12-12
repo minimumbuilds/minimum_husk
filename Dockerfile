@@ -6,7 +6,7 @@ ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL Name=minimum_template \
-      Version=0.0.0 \
+      Version=0.0.1 \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/minimumbuilds/minimum_template.git" \
       org.label-schema.vcs-ref=$VCS_REF
