@@ -6,17 +6,18 @@ ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL Name=minimum_husk \
-      Version=0.0.1 \
-      org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-url="https://github.com/minimumbuilds/minimum_husk.git" \
-      org.label-schema.vcs-ref=$VCS_REF
+    Version=0.0.1 \
+    org.label-schema.build-date=$BUILD_DATE \
+    org.label-schema.vcs-url="https://github.com/minimumbuilds/minimum_husk.git" \
+    org.label-schema.vcs-ref=$VCS_REF
 
-COPY requirements.txt .
+RUN mkdir /app
+COPY . /app/
+WORKDIR /app
 
-RUN pip3 -update && pip3 install -r requirements.txt \ 
-        && cd /usr/local/bin \
-	&& ln -s idle3 idle \
-	&& ln -s pydoc3 pydoc \
-	&& ln -s python3 python \
-	&& ln -s python3-config python-config 
+RUN apk add ca-certificates gcc musl-dev libffi-dev python3-dev openssl-dev make libxml2-dev libxslt-dev \
+	&& pip3 install -r requirements.txt  
+
+ENTRYPOINT ["python3"]
+CMD ["husk.py"]
 

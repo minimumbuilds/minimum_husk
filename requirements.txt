@@ -1,1 +1,18 @@
-# Python packages
+
+napalm
+napalm-base
+napalm-eos
+napalm-fortios
+napalm-ios
+napalm-iosxr
+napalm-junos
+napalm-nxos
+napalm-panos
+napalm-pluribus
+napalm-ros
+napalm-vyos
+ncclient
+netaddr
+requests
+urllib3
+cmd2
