@@ -1,13 +1,13 @@
 # minimum_husk
 
-Version: v0.0.0
+Version: v0.0.1
 
 ## Docker Image
 
-[![](https://images.microbadger.com/badges/version/minimumbuilds/minimum_husk:v0.0.0.svg)](https://microbadger.com/images/minimumbuilds/minimum_husk:v0.0.0 "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/minimumbuilds/minimum_husk:v0.0.0.svg)](https://microbadger.com/images/minimumbuilds/minimum_husk:v0.0.0 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/commit/minimumbuilds/minimum_husk:v0.0.0.svg)](https://microbadger.com/images/minimumbuilds/minimum_husk:v0.0.0 "Get your own commit badge on microbadger.com") 
+[![](https://images.microbadger.com/badges/version/minimumbuilds/minimum_husk:v0.0.1.svg)](https://microbadger.com/images/minimumbuilds/minimum_husk:v0.0.1 "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/minimumbuilds/minimum_husk:v0.0.1.svg)](https://microbadger.com/images/minimumbuilds/minimum_husk:v0.0.1 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/commit/minimumbuilds/minimum_husk:v0.0.1.svg)](https://microbadger.com/images/minimumbuilds/minimum_husk:v0.0.1 "Get your own commit badge on microbadger.com") 
 
 ## Build
-[![Build Status](https://travis-ci.org/minimumbuilds/minimum_husk.svg?branch=v0.0.0)](https://travis-ci.org/minimumbuilds/minimum_husk)
+[![Build Status](https://travis-ci.org/minimumbuilds/minimum_husk.svg?branch=v0.0.1)](https://travis-ci.org/minimumbuilds/minimum_husk)
 
 ## Pull
 	docker pull minimumbuilds/minimum_husk
