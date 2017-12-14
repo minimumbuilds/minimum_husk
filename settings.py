@@ -1,13 +1,13 @@
 devices = {
     'vsrx': {
-        'mgmt_ip': '172.28.128.11',
-        'mgmt_port': 22,
+        'mgmt_ip': 'localhost',
+        'mgmt_port': 2202,
         'device_type': 'junos',
         'username': 'readonly',
         'password': 'readonly'},
     'veos': {
-        'mgmt_ip': '172.28.128.10',
-        'mgmt_port': 443,
+        'mgmt_ip': 'localhost',
+        'mgmt_port': 12443,
         'device_type': 'eos',
         'username': 'readonly',
         'password': 'readonly'},

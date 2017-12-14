@@ -2,10 +2,13 @@
 
 Version: v0.0.3
 
+## Build
+[![Build Status](https://travis-ci.org/minimumbuilds/minimum_husk.svg?branch=v0.0.3)](https://travis-ci.org/minimumbuilds/minimum_husk)
+
 ## The Husk Shell (experimental) - an agnostic CLI for every router.
 
 The Husk Shell is an experimental CLI based on Napalm.  It began with the idea of
-having a sngle unified console that would present the operator with a consistent 
+having a single unified console that would present the operator with a consistent 
 set of commands, regardless of the Vendor.
 
 There is very little code here, and it is simply a proof of concept. The heavy lifting all comes
@@ -13,13 +16,16 @@ from Cmd2 and Napalm.
 
 ### Why?
 
+Mostly, I just did it for fun.
+
 - To show how awesome Napalm is. There's only about 200 lines of code to make this.
-- As a proof of concecpt of a Unified Console.
+- As a proof of concept of a Unified Console.
 
 While the days of direct configuration of network devices are quickly disappearing, the need
 directly access the device during troubleshooting will remain.  Having a single READ ONLY 
 operator console that provides a consistant interface across all devices for T1 support
 may be beneficial. 	
+
 
 
 ### Cmd2
@@ -38,14 +44,36 @@ https://github.com/napalm-automation/napalm
 
 We are going to lift the majority of our help directly from Napalm
 
+### Device contexts
 
-## Docker Image
+Husk introduces the concept of dynamic device context to the router CLI.
 
-[![](https://images.microbadger.com/badges/version/minimumbuilds/minimum_husk:v0.0.3.svg)](https://microbadger.com/images/minimumbuilds/minimum_husk:v0.0.3 "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/minimumbuilds/minimum_husk:v0.0.3.svg)](https://microbadger.com/images/minimumbuilds/minimum_husk:v0.0.3 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/commit/minimumbuilds/minimum_husk:v0.0.3.svg)](https://microbadger.com/images/minimumbuilds/minimum_husk:v0.0.3 "Get your own commit badge on microbadger.com") 
+**Using the device context, we are able able to issue a SINGLE command and execute it against all the 
+devices in the current context, REGARDLESS of Vendor or platform.**
 
-## Build
-[![Build Status](https://travis-ci.org/minimumbuilds/minimum_husk.svg?branch=v0.0.3)](https://travis-ci.org/minimumbuilds/minimum_husk)
+### Sample Video
 
+The following commands are run in the video
+
+
+| Command   |   Function  |
+|------------------------------------|---------------------------------------------------------------------------|
+|?|  Help|
+|help get_interfaces_ip| Command specific help |
+|show_devices| Show the device Inventory | 
+|set_context vsrx veos cisco-switch1 | Set the context |
+|is_alive| Connectivity test against device context |:w
+|help get_facts | Command Specific help |
+|get_facts | Get Facts |
+|help get_interfaces_ip | Command Specific help |
+|get_interfaces_ip | Get Interface IPs device context |
+|!cat test_script | Run shell command cat to display the file 'test_script' |
+|load test_script | Run `test_script` |
+
+
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ETNb_BTGB2w/0.jpg)](http://www.youtube.com/watch?v=ETNb_BTGB2w)
+ 
 ## Clone 
 
 	https://github.com/minimumbuilds/minimum_husk.git
@@ -81,13 +109,12 @@ devices dictionary should come from other sources, like the Asset Management sys
 In any case, Husk will mark the file 
 
 ## Run
-	docker run -it --rm minimumbuilds/minimum_husk
+
+	python husk.py
+
+
 
 Minimal Builds. There are many like it, this one is mine.
-
-## Built With
-
-* [Alpine Linux](https://hub.docker.com/_/alpine/) - Alpine Linux Official Docker
 
 ## Authors
 
