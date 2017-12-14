@@ -53,6 +53,9 @@ devices in the current context, REGARDLESS of Vendor or platform.**
 
 ### Sample Video
 
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ETNb_BTGB2w/0.jpg)](http://www.youtube.com/watch?v=ETNb_BTGB2w)
+ 
 The following commands are run in the video
 
 
@@ -71,9 +74,6 @@ The following commands are run in the video
 |load test_script | Run `test_script` |
 
 
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ETNb_BTGB2w/0.jpg)](http://www.youtube.com/watch?v=ETNb_BTGB2w)
- 
 ## Clone 
 
 	https://github.com/minimumbuilds/minimum_husk.git
@@ -103,10 +103,13 @@ Currently, all the device inventory is kept in a dictionary in setup.py
 		'password': 'readonly'}
 	    }
 
-This is obviously a bad idea.  In any sort of 'real' environment, all of the data in the
-devices dictionary should come from other sources, like the Asset Management system.  
+This is obviously a bad idea. (plain text passwords, eeek)
 
-In any case, Husk will mark the file 
+In any sort of 'real' environment, all of the data in the
+devices dictionary should come from other sources, like the Asset Management system.
+
+Husk will change the  permissions on settings.py to RW for the owner exclusively
+and this will suffice for our prototype.
 
 ## Run
 
