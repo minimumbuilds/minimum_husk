@@ -14,6 +14,9 @@ set of commands, regardless of the Vendor.
 There is very little code here, and it is simply a proof of concept. The heavy lifting all comes
 from Cmd2 and Napalm. 
 
+This is purely experimental project and contains bugs and bad ideas.  It is unlikely that 
+this project will ever reach a 'completion' stage. 
+
 ### Why?
 
 Mostly, I just did it for fun.
@@ -53,6 +56,7 @@ devices in the current context, REGARDLESS of Vendor or platform.**
 
 ### Sample Video
 
+This video shows running multiple commands across Cisco, Juniper & Arista Routers simultaneously
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ETNb_BTGB2w/0.jpg)](http://www.youtube.com/watch?v=ETNb_BTGB2w)
  
