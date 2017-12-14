@@ -72,7 +72,7 @@ class MyCmd(Cmd):
             method = arg.parsed[1]
             if method != '':
                 try:
-                    fake_command.__doc__=get_docs(method)
+                    fake_command.__doc__ = get_docs(method)
                 except:
                     fake_command.__doc__ = "No help available, sorry"
 
@@ -147,7 +147,8 @@ class MyCmd(Cmd):
         Add a new device to inventory.
         """
         if args:
-            # {'junos-vsrx1': {'mgmt_ip': '192.168.1.181', 'mgmt_port': 2202, 'device_type': 'junos', 'username': 'readonly', 'password': 'readonly'}}
+            # {'junos-vsrx1': {'mgmt_ip': '192.168.1.181', 'mgmt_port': 2202,
+            # 'device_type': 'junos', 'username': 'readonly', 'password': 'readonly'}}
             pass
         else:
             print('Add new device:')
@@ -173,7 +174,7 @@ class MyCmd(Cmd):
             while True:
                 print('Supported device types: {}'.format(SUPPORTED_DRIVERS))
                 device_type = input('{}>'.format('device_type'))
-                if not device_type in SUPPORTED_DRIVERS:
+                if device_type not in SUPPORTED_DRIVERS:
                     print('Invalid device type')
                 else:
                     break
@@ -254,24 +255,28 @@ def fake_command(self, arg):
         return getattr(device.connector, connector)()
 
     # grab the first word in the input
-    this_command=arg.parsed[0]
+    this_command = arg.parsed[0]
 
     # Run against each device in the inventory, sequentially...
     for my_device in self.context:
         print()
         print('*' * 80)
-        print("Running '{}' on device: {}@{}:{}({})".format(this_command, my_device.name, my_device.mgmt_ip, my_device.mgmt_port, my_device.device_type))
+        print("Running '{}' on device: {}@{}:{}({})".format(this_command,
+                                                            my_device.name,
+                                                            my_device.mgmt_ip,
+                                                            my_device.mgmt_port,
+                                                            my_device.device_type))
         print()
         try:
             output = run_command(my_device, this_command)
         except NotImplementedError as e:
-            print('Command not implemented for this platform')
+            print('Command not implemented for this platform', e)
             continue
 
         # Print(output)
-        if this_command=='get_config':
+        if this_command == 'get_config':
             # This output could be a little prettier, should paginate
-           print(output['running'])
+            print(output['running'])
         else:
             pp(output)
         print()
@@ -308,21 +313,25 @@ if __name__ == "__main__":
                 callable(getattr(napalm.base.NetworkDriver, func)) and func in specified_commands]
 
     # (alternative) Grab all 'get' methods as well additional specified
-    additional_commands = ['is_alive', 'compare_config', 'commit_config', 'discard_config', 'load_merge_candidate',
-        'load_replace_candidate', 'ping', 'traceroute']
+    additional_commands = ['is_alive',
+                           'compare_config',
+                           'commit_config',
+                           'discard_config',
+                           'load_merge_candidate',
+                           'load_replace_candidate',
+                           'ping',
+                           'traceroute']
     commands = [func for func in dir(napalm.base.NetworkDriver) if
         callable(getattr(napalm.base.NetworkDriver, func)) and
-        (func.startswith("get") or func in additional_commands)]
-
-
+            (func.startswith("get") or func in additional_commands)]
 
     # For each method, create a method named "'do_'+method name" under MyCMD,
     # and map that to 'my_list_runne
 
     for method in commands:
-        fake_command.__doc__= 'place holder'  # Add a placeholder doc so cmd2 will show in help menu
+        fake_command.__doc__ = 'place holder'  # Add a placeholder doc so cmd2 will show in help menu
 
-        setattr(  MyCmd, 'do_{}'.format(method),  fake_command)
+        setattr(MyCmd, 'do_{}'.format(method),  fake_command)
 
     # Launch the CLI
     target = MyCmd()
