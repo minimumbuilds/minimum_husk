@@ -58,7 +58,7 @@ devices in the current context, REGARDLESS of Vendor or platform.**
 
 This video shows running multiple commands across Cisco, Juniper & Arista Routers simultaneously
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ETNb_BTGB2w/0.jpg)](http://www.youtube.com/watch?v=ETNb_BTGB2w)
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/9u4f2YOfuBk/0.jpg)](http://www.youtube.com/watch?v=9u4f2YOfuBk)
  
 The following commands are run in the video
 

@@ -74,6 +74,7 @@ class MyCmd(Cmd):
                 try:
                     fake_command.__doc__ = get_docs(method)
                 except:
+                    # TODO...
                     fake_command.__doc__ = "No help available, sorry"
 
         return(arg)
@@ -312,8 +313,6 @@ if __name__ == "__main__":
     commands = [func for func in dir(napalm.base.NetworkDriver) if
                 callable(getattr(napalm.base.NetworkDriver, func)) and func in specified_commands]
 
-
-
     """
     (alternative) Grab all 'get' methods as well additional specified
 
@@ -331,34 +330,35 @@ if __name__ == "__main__":
 
     This will produce significantly more commands on the CLI.
 
-		Documented commands (type help <topic>):
-		========================================
-		_relative_load            get_interfaces_ip          is_alive
-		add_device                get_ip_route               load
-		cmdenvironment            get_ipv6_neighbors_table   load_merge_candidate
-		commit_config             get_lldp_neighbors         load_replace_candidate
-		compare_config            get_lldp_neighbors_detail  ping
-		delete_device             get_mac_address_table      py
-		discard_config            get_network_instances      pyscript
-		edit                      get_ntp_peers              refresh_inventory
-		get_arp_table             get_ntp_servers            run
-		get_bgp_config            get_ntp_stats              save              i
-		get_bgp_neighbors         get_optics                 set
-		get_bgp_neighbors_detail  get_probes_config          set_context
-		get_config                get_probes_results         shell
-		get_environment           get_route_to               shortcuts
-		get_facts                 get_snmp_information       show
-		get_firewall_policies     get_users                  show_devices
-		get_interfaces            help                       traceroute
-		get_interfaces_counters   history
+    Documented commands (type help <topic>):
+    =======================================
+    relative_load            get_interfaces_ip          is_alive
+    add_device                get_ip_route               load
+    cmdenvironment            get_ipv6_neighbors_table   load_merge_candidate
+    commit_config             get_lldp_neighbors         load_replace_candidate
+    compare_config            get_lldp_neighbors_detail  ping
+    delete_device             get_mac_address_table      py
+    discard_config            get_network_instances      pyscript
+    edit                      get_ntp_peers              refresh_inventory
+    get_arp_table             get_ntp_servers            run
+    get_bgp_config            get_ntp_stats              save              i
+    get_bgp_neighbors         get_optics                 set
+    get_bgp_neighbors_detail  get_probes_config          set_context
+    get_config                get_probes_results         shell
+    get_environment           get_route_to               shortcuts
+    get_facts                 get_snmp_information       show
+    get_firewall_policies     get_users                  show_devices
+    get_interfaces            help                       traceroute
+    get_interfaces_counters   history
 
-		Undocumented commands:
-		======================
-		exit  quit
-	"""
+    Undocumented commands:
+    ======================
+    exit  quit
+    """
 
-    # For each method, create a method named "'do_'+method name" under MyCMD,
-    # and map that to 'my_list_runne
+
+# For each method, create a method named "'do_'+method name" under MyCMD,
+# and map that to 'my_list_runne
 
     for method in commands:
         fake_command.__doc__ = 'place holder'  # Add a placeholder doc so cmd2 will show in help menu
