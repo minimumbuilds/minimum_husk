@@ -5,7 +5,7 @@ Version: v0.0.3
 ## Build
 [![Build Status](https://travis-ci.org/minimumbuilds/minimum_husk.svg?branch=v0.0.3)](https://travis-ci.org/minimumbuilds/minimum_husk)
 
-## The Husk Shell (experimental) - an agnostic CLI for every router.
+## The Husk Shell (experimental) - an agnostic CLI for (almost) every router.
 
 The Husk Shell is an experimental CLI based on Napalm.  It began with the idea of
 having a single unified console that would present the operator with a consistent 
@@ -19,17 +19,14 @@ this project will ever reach a 'completion' stage.
 
 ### Why?
 
-Mostly, I just did it for fun.
-
-- To show how awesome Napalm is. There's only about 200 lines of code to make this.
-- As a proof of concept of a Unified Console.
+As a proof of concept of a Unified Console.
 
 While the days of direct configuration of network devices are quickly disappearing, the need
 directly access the device during troubleshooting will remain.  Having a single READ ONLY 
 operator console that provides a consistant interface across all devices for T1 support
 may be beneficial. 	
 
-
+Mostly, I just did it for fun.
 
 ### Cmd2
 
@@ -44,6 +41,24 @@ Napalm is awesome and does the majority of the work. It provides generic functio
 connectivity
  
 https://github.com/napalm-automation/napalm
+
+[Currently Supported Devices:](http://napalm.readthedocs.io/en/latest/support/)
+
+|  _    |                   EOS      |   JunOS  |         IOS-XR   |    NXOS     |     IOS|
+|-|-|-|-|-|-|
+ | **Module Name**      |   napalm-eos | napalm-junos  |  napalm-iosxr\ napalm-nxos |  napalm-ios|
+ | **Driver Name**      |   eos        | junos         |  iosxr       \ nxos        |  ios|
+ | **Structured data**  |   Yes        | Yes           |  No          \ Yes         |  No|
+ | **Minimum version**  |   4.15.0F    | 12.1          |  5.1.0       | 6.1  |  12.4(20)T|
+ | **Backend library**  |   pyeapi  | junos-eznc |  pyIOSXR  | pycsco   |  netmiko|
+
+- pyeapi: https://github.com/arista-eosplus/pyeapi
+- junos-eznc: https://github.com/Juniper/py-junos-eznc
+- pyIOSXR: https://github.com/fooelisa/pyiosxr
+- pycsco: https://github.com/jedelman8/pycsco
+- netmiko: https://github.com/ktbyers/netmiko
+
+- NX-API support on the Nexus 5k, 6k and 7k families was introduced in version 7.2
 
 We are going to lift the majority of our help directly from Napalm
 
