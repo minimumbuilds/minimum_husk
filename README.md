@@ -2,9 +2,6 @@
 
 Version: v0.0.3
 
-## Build
-[![Build Status](https://travis-ci.org/minimumbuilds/minimum_husk.svg?branch=v0.0.3)](https://travis-ci.org/minimumbuilds/minimum_husk)
-
 ## The Husk Shell (experimental) - an agnostic CLI for (almost) every router.
 
 The Husk Shell is an experimental CLI based on Napalm.  It began with the idea of
